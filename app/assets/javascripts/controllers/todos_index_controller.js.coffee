@@ -1,0 +1,1 @@
+TodoMVC.TodosIndexController = Ember.ArrayController.extend()
