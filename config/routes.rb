@@ -1,4 +1,3 @@
 TodoMVC::Application.routes.draw do
-  root controller: 'ember', action: '/'
-  get 'ember/index'
+  root controller: 'ember', action: '/index'
 end
