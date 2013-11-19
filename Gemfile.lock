@@ -29,6 +29,8 @@ GEM
       erubis (~> 2.7.0)
       rack (~> 1.5.2)
       rack-test (~> 0.6.2)
+    active_model_serializers (0.8.1)
+      activemodel (>= 3.0)
     activemodel (4.0.0)
       activesupport (= 4.0.0)
       builder (~> 3.1.0)
@@ -47,6 +49,13 @@ GEM
     addressable (2.3.5)
     arel (4.0.1)
     atomic (1.1.14)
+    barber (0.4.2)
+      ember-source
+      execjs
+      handlebars-source
+    barber-emblem (0.1.1)
+      barber (>= 0.4.1)
+      emblem-source
     bootstrap-sass (3.0.2.1)
       sass (~> 3.2)
     bson (2.0.0.rc3)
@@ -63,6 +72,23 @@ GEM
     email_spec (1.5.0)
       launchy (~> 2.1)
       mail (~> 2.2)
+    ember-data-source (1.0.0.beta.3)
+      ember-source
+    ember-rails (0.14.0)
+      active_model_serializers
+      barber (>= 0.4.1)
+      ember-data-source
+      ember-source
+      execjs (>= 1.2)
+      handlebars-source
+      jquery-rails (>= 1.0.17)
+      railties (>= 3.1)
+    ember-source (1.2.0.beta.3)
+      handlebars-source (= 1.0.12)
+    emblem-rails (0.2.0)
+      barber-emblem (~> 0.1.1)
+      ember-rails (>= 0.14.0)
+    emblem-source (0.3.4)
     erubis (2.7.0)
     execjs (2.0.2)
     haml (4.1.0.alpha.2)
@@ -76,6 +102,7 @@ GEM
       haml (>= 3.0)
       nokogiri
       ruby_parser
+    handlebars-source (1.0.12)
     hike (1.2.3)
     hpricot (0.8.6)
     html2haml (1.0.1)
@@ -191,8 +218,13 @@ DEPENDENCIES
   coffee-rails (~> 4.0.0)
   database_cleaner (= 1.0.1)
   email_spec
+  ember-data-source (~> 1.0.0.beta.3)
+  ember-rails (>= 0.14.0)
+  ember-source (= 1.2.0.beta.3)
+  emblem-rails (= 0.2.0)
   haml-rails
   haml2slim
+  handlebars-source (~> 1.0.12)
   html2haml
   jbuilder (~> 1.2)
   jquery-rails
