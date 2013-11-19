@@ -1,1 +1,1 @@
-TodoMVC.TodosIndexController = Ember.ArrayController.extend()
+class TodosIndexController extends Ember.ArrayController
