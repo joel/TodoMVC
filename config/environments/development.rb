@@ -29,4 +29,5 @@ TodoMVC::Application.configure do
   config.handlebars.precompile = true
   config.ember.app_name = 'TodoMVC'
 
+  Slim::Engine.set_default_options pretty: true, sort_attrs: false
 end
