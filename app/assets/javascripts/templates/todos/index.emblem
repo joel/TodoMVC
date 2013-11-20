@@ -1,6 +1,9 @@
 ul#todo-list
   each itemController='todo'
-    li class='isCompleted:completed'
-      = input type='checkbox' checked=isCompleted class='toggle'
-      label = title
-      button class='destroy'
+    li class={ isCompleted:completed isEditing:editing }
+      if isEditing
+        input class='edit'
+      else
+        = input type='checkbox' checked=isCompleted class='toggle'
+        label doubleClick='editTodo' {{title}}
+        button class='destroy' click='removeTodo'

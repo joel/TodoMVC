@@ -11,3 +11,16 @@ TodoMVC.TodoController = Ember.ObjectController.extend
       model.save()
       value
   ).property 'model.isCompleted'
+  isEditing: false
+
+  actions:
+    editTodo: ->
+      @set 'isEditing', true
+
+    acceptChanges: ->
+      @set 'isEditing', false
+
+      if Ember.isEmpty(@get('model.title'))
+        @send 'removeTodo'
+      else
+        @get('model').save()
