@@ -2,3 +2,4 @@
 
 TodoMVC.Router.map ->
   @resource 'todos', ->
+    @route 'active'
