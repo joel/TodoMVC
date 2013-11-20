@@ -13,7 +13,7 @@ section#todoapp
       li
         a.selected href='all'  All
       li
-        a href='active'  Active
+        linkTo 'todos.active' activeClass='selected' | Active
       li
         a href='completed'  Completed
     button#clear-completed
