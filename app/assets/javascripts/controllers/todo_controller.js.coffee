@@ -11,6 +11,7 @@ TodoMVC.TodoController = Ember.ObjectController.extend
       model.save()
       value
   ).property 'model.isCompleted'
+
   isEditing: false
 
   actions:
@@ -24,3 +25,8 @@ TodoMVC.TodoController = Ember.ObjectController.extend
         @send 'removeTodo'
       else
         @get('model').save()
+
+    removeTodo: ->
+      todo = @get('model')
+      todo.deleteRecord()
+      todo.save()
