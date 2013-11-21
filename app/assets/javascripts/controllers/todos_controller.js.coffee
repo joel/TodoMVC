@@ -1,5 +1,23 @@
 TodoMVC.TodosController = Ember.ArrayController.extend
 
+  remaining: (->
+    @filterBy('isCompleted', false).get 'length'
+  ).property 'model.@each', 'isCompleted'
+
+  inflection: (->
+    remaining = @get('remaining')
+    (if remaining is 1 then 'item' else 'items')
+  ).property 'remaining'
+
+  hasCompleted: (->
+    @get('completed') > 0
+  ).property 'completed'
+
+  completed: (->
+    @filterBy('isCompleted', true).get 'length'
+  ).property 'model.@each', 'isCompleted'
+
+
   actions:
 
     createTodo: ->
@@ -19,3 +37,8 @@ TodoMVC.TodosController = Ember.ArrayController.extend
 
       # Save the new model
       todo.save()
+
+    clearCompleted: ->
+      completed = @filterBy('isCompleted', true)
+      completed.invoke 'deleteRecord'
+      completed.invoke 'save'

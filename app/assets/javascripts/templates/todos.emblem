@@ -1,3 +1,22 @@
-= input type='text' id='new-todo' placeholder='What needs to be done?' value=newTitle action='createTodo'
-section#main
-  outlet
+header#header
+  h1 todos
+
+  = input type='text' id='new-todo' placeholder='What needs to be done?' value=newTitle action='createTodo'
+  section#main
+
+    outlet
+
+  input#toggle-all type='checkbox'
+footer#footer
+  span#todo-count
+    strong {{remaining}}
+      {{inflection}} left
+  ul#filters
+    li
+      linkTo 'todos.index' activeClass='selected' | All
+    li
+      linkTo 'todos.active' activeClass='selected' | Active
+    li
+      linkTo 'todos.completed' activeClass='selected' | Completed
+  if hasCompleted
+    button#clear-completed click='clearCompleted' | Clear completed {{completed}}

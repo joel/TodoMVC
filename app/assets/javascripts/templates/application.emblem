@@ -1,22 +1,4 @@
 section#todoapp
-  header#header
-    h1 todos
-
-    outlet
-
-    input#toggle-all type='checkbox'
-  footer#footer
-    span#todo-count
-      strong {{remaining}}
-        {{inflection}} left
-    ul#filters
-      li
-        linkTo 'todos.index' activeClass='selected' | All
-      li
-        linkTo 'todos.active' activeClass='selected' | Active
-      li
-        linkTo 'todos.completed' activeClass='selected' | Completed
-    button#clear-completed
-      | Clear completed (1)
+  outlet
 footer#info
   p Double-click to edit a todo
