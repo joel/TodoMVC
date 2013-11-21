@@ -15,7 +15,7 @@ section#todoapp
       li
         linkTo 'todos.active' activeClass='selected' | Active
       li
-        a href='completed'  Completed
+        linkTo 'todos.completed' activeClass='selected' | Completed
     button#clear-completed
       | Clear completed (1)
 footer#info
