@@ -1,5 +1,6 @@
 #= require jquery
 #=
+#= require handlebars.runtime
 #= require handlebars
 #= require ember
 #= require ember-data

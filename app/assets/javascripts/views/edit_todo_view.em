@@ -1,5 +1,4 @@
-TodoMVC.EditTodoView = Ember.TextField.extend
-
+class TodoMVC.EditTodoView extends Ember.TextField
   didInsertElement: ->
     @$().focus()
 

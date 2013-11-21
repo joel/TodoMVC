@@ -1,6 +1,6 @@
 # For more information see: http://emberjs.com/guides/routing/
 
 TodoMVC.Router.map ->
-  @resource 'todos', ->
+  @resource 'todos', { path: '/' }, ->
     @route 'active'
     @route 'completed'
