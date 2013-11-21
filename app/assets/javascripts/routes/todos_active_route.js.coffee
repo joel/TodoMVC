@@ -4,7 +4,6 @@ TodoMVC.TodosActiveRoute = Ember.Route.extend
     @store.filter 'todo', (todo) ->
       not todo.get('isCompleted')
 
-
   renderTemplate: (controller) ->
     @render 'todos/index',
       controller: controller
